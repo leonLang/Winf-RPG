@@ -21,12 +21,10 @@ public class Loopie implements Runnable {
 			update();
 			timestamp = System.currentTimeMillis();
 			if (timestamp - oldTimestamp > maxLoopTime) {
-				System.out.println("Wir zu spät!");
 				continue;
 			}
 			render();
 			timestamp = System.currentTimeMillis();
-			System.out.println(maxLoopTime + " : " + (timestamp - oldTimestamp));
 			if (timestamp - oldTimestamp <= maxLoopTime) {
 				try {
 					Thread.sleep(maxLoopTime - (timestamp - oldTimestamp));
