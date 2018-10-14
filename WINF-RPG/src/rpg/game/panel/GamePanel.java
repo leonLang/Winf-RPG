@@ -1,6 +1,7 @@
 package rpg.game.panel;
 
 import java.awt.Graphics;
+import java.awt.Toolkit;
 
 import javax.swing.JPanel;
 
@@ -15,6 +16,7 @@ public class GamePanel extends JPanel {
 
 	}
 	protected void paintComponent(Graphics g) {
+		Toolkit.getDefaultToolkit();
 		super.paintComponent(g);
 		g.drawRect(x, 100, 100, 100);
 	}
