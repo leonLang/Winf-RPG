@@ -40,6 +40,7 @@ public class Loopie implements Runnable {
 	}
 
 	void update() {
+		frame.gp.x += 10;
 
 	}
 

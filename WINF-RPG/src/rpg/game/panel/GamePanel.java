@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 
 public class GamePanel extends JPanel {
 
+	public int x;
 
 	public GamePanel() {
 		setLayout(null);
@@ -15,7 +16,7 @@ public class GamePanel extends JPanel {
 	}
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawRect(100, 100, 100, 100);
+		g.drawRect(x, 100, 100, 100);
 	}
 
 }
