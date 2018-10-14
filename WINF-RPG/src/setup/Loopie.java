@@ -2,6 +2,7 @@ package setup;
 
 import java.io.IOException;
 
+import rpg.data.parser.MainParser;
 import rpg.frame.RpgFrame;
 import rpg.network.client.ServerConnector;
 
@@ -46,6 +47,7 @@ public class Loopie implements Runnable {
 	void setup() {
 		try {
 			ServerConnector client = new ServerConnector();
+			new MainParser();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -1,17 +1,21 @@
 package rpg.network.client;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ConnectException;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class ServerConnector {
 	public ServerConnector() throws IOException {
-		InetAddress address = InetAddress.getByName("46.165.137.63");
-		int port = 9599;
+		NetworkFile netData = new NetworkFile();
+		InetAddress address = netData.getAddress();
+		int port = netData.getPort();
 
 		Socket s1 = null;
 		String line = null;
@@ -47,6 +51,26 @@ public class ServerConnector {
 			}
 		} catch (ConnectException e) {
 			System.err.println("Unable to connect: Connection refused: connect");
+		}
+	}
+	
+	class NetworkFile {
+		private InetAddress address;
+		private int port;
+		public NetworkFile() throws UnknownHostException, IOException {
+			File serverinformation = new File("network.txt");
+			BufferedReader br = new BufferedReader(new FileReader(serverinformation));
+			
+			address = InetAddress.getByName(br.readLine());
+			System.out.println("Connect to: " + address);
+			port = Integer.parseInt(br.readLine());
+			System.out.println("On port: " + port);
+		}
+		public InetAddress getAddress() throws UnknownHostException {
+			return address;
+		}
+		public int getPort() {
+			return port;
 		}
 	}
 }
