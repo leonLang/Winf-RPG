@@ -44,7 +44,7 @@ public class Loopie implements Runnable {
 	}
 
 	void render() {
-
+		frame.repaint();
 	}
 
 	void setup() {
