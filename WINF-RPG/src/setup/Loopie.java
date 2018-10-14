@@ -49,7 +49,7 @@ public class Loopie implements Runnable {
 
 	void setup() {
 		try {
-			client = new ServerConnector();
+		//	client = new ServerConnector();
 			new MainParser();
 		} catch (IOException e) {
 			e.printStackTrace();
