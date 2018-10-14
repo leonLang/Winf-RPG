@@ -1,5 +1,17 @@
 # Todo-list
 
 Peter:
-
+    -Frame
 Leon:
+
+unsigned:
+  -savefile reader
+  -mapfile reader
+  -controll class
+  -ingame Panel organiser
+  -Menue
+  -Map-Editor
+  -Enemie Manager
+  -Server connection(client side)
+  -Server connection(server side)
+  
