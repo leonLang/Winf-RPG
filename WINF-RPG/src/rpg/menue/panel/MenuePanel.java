@@ -1,5 +1,14 @@
 package rpg.menue.panel;
 
-public class MenuePanel {
+import javax.swing.JPanel;
+
+public class MenuePanel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public MenuePanel() {
+
+	}
 
 }

@@ -1,5 +1,10 @@
 package setup;
 
+
+
+import rpg.frame.RpgFrame;
+import rpg.menue.panel.MenuePanelTest;
+
 public class Loopie implements Runnable{
 	public static final int FPS = 60;
 	  public static final long maxLoopTime = 1000 / FPS;
@@ -10,6 +15,7 @@ public class Loopie implements Runnable{
 	  public void run() {
 	    long timestamp;
 	    long oldTimestamp;
+	    setup();
 	    while(running) {
 	      oldTimestamp = System.currentTimeMillis();
 	      update();
@@ -31,14 +37,14 @@ public class Loopie implements Runnable{
 	    }
 	  }
 	  void update() {
-		  try {
-			    Thread.sleep(15);
-			  } catch (InterruptedException e) {
-			    e.printStackTrace();
-			  };
+		 
 
 	  }
 	  void render() { 
-		  System.out.println("test");
+		  
+	  }
+	  void setup() {
+		  RpgFrame frame = new RpgFrame();
+		  frame.setVisible(true);
 	  }
 	}
