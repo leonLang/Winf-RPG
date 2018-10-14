@@ -12,7 +12,7 @@ import rpg.data.parser.MainParser;
 import rpg.frame.RpgFrame;
 import rpg.network.client.ServerConnector;
 
-public class Loopie implements Runnable, ActionListener{
+public class Loopie implements Runnable{
 	public static final int FPS = 60;
 	public static final long maxLoopTime = 1000 / FPS;
 
@@ -25,13 +25,11 @@ public class Loopie implements Runnable, ActionListener{
 
 	@Override
 	public void run() {
-		timer = new Timer(20,this);
 		long timestamp;
 		long oldTimestamp;
 		setup();
-		timer.setInitialDelay(0);
-		timer.start();
-		/*while (running) {
+
+		while (running) {
 			oldTimestamp = System.currentTimeMillis();
 			update();
 			timestamp = System.currentTimeMillis();
@@ -47,7 +45,7 @@ public class Loopie implements Runnable, ActionListener{
 					e.printStackTrace();
 				}
 			}
-		}*/
+		}
 	}
 
 	void update() {
@@ -56,6 +54,7 @@ public class Loopie implements Runnable, ActionListener{
 	}
 
 	void render() {
+		Toolkit.getDefaultToolkit();
 		frame.repaint();
 	}
 
@@ -74,28 +73,5 @@ public class Loopie implements Runnable, ActionListener{
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		long timestamp;
-		long oldTimestamp;
-		oldTimestamp = System.currentTimeMillis();
-		update();
-		timestamp = System.currentTimeMillis();
-		if (timestamp - oldTimestamp > maxLoopTime) {
-			
-		}
-		render();
-		timestamp = System.currentTimeMillis();
-		if (timestamp - oldTimestamp <= maxLoopTime) {
-			try {
-				Thread.sleep(maxLoopTime - (timestamp - oldTimestamp));
-			} catch (InterruptedException ee) {
-				ee.printStackTrace();
-			}
-		}
-		timer.restart();
-		
 	}
 }
