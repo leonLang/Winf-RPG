@@ -5,5 +5,8 @@
 	<classpathentry kind="lib" path="C:/Users/tromp/git/Winf-RPG/WINF-RPG/lib/jackson-core-2.9.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tromp/git/Winf-RPG/WINF-RPG/lib/jackson-annotations-2.9.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tromp/git/Winf-RPG/WINF-RPG/lib/jackson-databind-2.9.7.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.9.7.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.9.7.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.9.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

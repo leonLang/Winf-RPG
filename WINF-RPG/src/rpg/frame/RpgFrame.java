@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import rpg.menue.panel.MenuePanel;
-import rpg.menue.panel.MenuePanelTest;
 
 public class RpgFrame extends JFrame {
 
@@ -23,7 +22,7 @@ public class RpgFrame extends JFrame {
 	public RpgFrame() {
 		MenuePanel mp = new MenuePanel();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 1000, 600);
 		setContentPane(mp);
 	}
 
