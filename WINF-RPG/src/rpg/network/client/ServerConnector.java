@@ -31,6 +31,7 @@ public class ServerConnector {
 
 			String response = "";
 			try {
+				System.out.println("connection sucssefuel");
 				line = br.readLine();
 				while (line.compareTo("QUIT") != 0) {
 					os.println(line);
@@ -58,7 +59,7 @@ public class ServerConnector {
 		private InetAddress address;
 		private int port;
 		public NetworkFile() throws UnknownHostException, IOException {
-			File serverinformation = new File("network.txt");
+			File serverinformation = new File("Network.txt");
 			BufferedReader br = new BufferedReader(new FileReader(serverinformation));
 			
 			address = InetAddress.getByName(br.readLine());

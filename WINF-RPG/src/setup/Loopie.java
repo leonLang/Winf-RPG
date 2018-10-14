@@ -11,6 +11,9 @@ public class Loopie implements Runnable {
 	public static final long maxLoopTime = 1000 / FPS;
 
 	public boolean running = true;
+	
+	public ServerConnector client;
+	public RpgFrame frame;
 
 	@Override
 	public void run() {
@@ -46,12 +49,12 @@ public class Loopie implements Runnable {
 
 	void setup() {
 		try {
-			ServerConnector client = new ServerConnector();
+			client = new ServerConnector();
 			new MainParser();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		RpgFrame frame = new RpgFrame();
+		frame = new RpgFrame();
 		frame.setVisible(true);
 	}
 }
