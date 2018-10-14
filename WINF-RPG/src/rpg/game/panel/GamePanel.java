@@ -18,7 +18,7 @@ public class GamePanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		Toolkit.getDefaultToolkit();
 		super.paintComponent(g);
-		g.drawRect(x, 100, 100, 100);
+		g.drawRect(1000/2-100, 600/2-100 + x, 100, 100);
 	}
 
 }
