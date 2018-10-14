@@ -1,6 +1,9 @@
 package setup;
 
+import java.io.IOException;
+
 import rpg.frame.RpgFrame;
+import rpg.network.client.ServerConnector;
 
 public class Loopie implements Runnable {
 	public static final int FPS = 60;
@@ -43,6 +46,11 @@ public class Loopie implements Runnable {
 	}
 
 	void setup() {
+		try {
+			ServerConnector client = new ServerConnector();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		RpgFrame frame = new RpgFrame();
 		frame.setVisible(true);
 	}
