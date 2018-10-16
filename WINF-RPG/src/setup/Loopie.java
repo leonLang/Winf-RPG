@@ -49,7 +49,7 @@ public class Loopie implements Runnable{
 	}
 
 	void update() {
-		frame.gp.x += 10;
+		frame.gp.x += 1;
 
 	}
 
@@ -66,12 +66,10 @@ public class Loopie implements Runnable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		frame = new RpgFrame();
+		frame = new RpgFrame(getScreenSize());
 		frame.setVisible(true);
 	}
-	void getScreenSize() {
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		double width = screenSize.getWidth();
-		double height = screenSize.getHeight();
+	Dimension getScreenSize() {
+		return Toolkit.getDefaultToolkit().getScreenSize();
 	}
 }
