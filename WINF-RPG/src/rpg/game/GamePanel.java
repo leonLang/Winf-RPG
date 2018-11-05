@@ -6,14 +6,14 @@ import javax.swing.JPanel;
 public class GamePanel extends JPanel {
 
 
-	private int WIDTH;
-	private int HEIGHT;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private GameGrid background;
 
 	public GamePanel(int WIDTH, int HEIGHT) {
-		this.WIDTH = WIDTH;
-		this.HEIGHT = HEIGHT;
 
 		background = new GameGrid(WIDTH, HEIGHT);
 		this.add(background);
@@ -24,7 +24,15 @@ public class GamePanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
+		
 		background.draw(g); // draw background
+		
+		//For Controller
+		this.setFocusable(true);
+		this.requestFocusInWindow();
+	}
+	public GameGrid getbackground() {
+		return background;
 	}
 
 }

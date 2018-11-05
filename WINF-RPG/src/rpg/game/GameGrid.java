@@ -18,7 +18,6 @@ public class GameGrid extends JPanel {
 
 		respx = WIDTH/32;
 		respy = HEIGHT/32-1;	//Die title bar nimmt platz weg , beträgt ungefährt 1
-		System.out.println(WIDTH + " " + HEIGHT);
 		
 		cellSize = new Dimension(32, 32);
 

@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
+import rpg.game.Game;
 import rpg.game.GamePanel;
 import rpg.menue.panel.MenuePanel;
 
@@ -15,7 +16,7 @@ public class RpgFrame extends JFrame {
 	public static final int GAME_HEIGHT = 864;
 	
 	public MenuePanel mp;
-	public GamePanel gp;
+	public Game game;
 	
 
 	/**
@@ -30,13 +31,13 @@ public class RpgFrame extends JFrame {
 		SCREEN_HEIGHT = (int) dimension.getHeight();
 		
 		mp = new MenuePanel();
-		gp = new GamePanel(GAME_WIDTH,GAME_HEIGHT);
+		game = new Game(GAME_WIDTH,GAME_HEIGHT);
 		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(SCREEN_WIDTH/2-GAME_WIDTH/2, SCREEN_HEIGHT/2-GAME_HEIGHT/2,GAME_WIDTH, GAME_HEIGHT);
 		
-		setContentPane(gp);
+		setContentPane(game.getPanel());
 		/*
 		 * Die Titel bar nimmt noch platz weg der return wert ist aber 0 bei allen 4 werten
 		 * 
