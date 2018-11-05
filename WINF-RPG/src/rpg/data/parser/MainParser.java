@@ -11,6 +11,5 @@ public class MainParser {
 		byte[] jsonData = Files.readAllBytes(Paths.get("map1.json"));
 		ObjectMapper objectMapper = new ObjectMapper();
 		MapJson map = objectMapper.readValue(jsonData, MapJson.class);
-		System.out.println(map.map[0]);
 	}
 }

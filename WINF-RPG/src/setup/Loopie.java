@@ -49,7 +49,6 @@ public class Loopie implements Runnable{
 	}
 
 	void update() {
-		frame.gp.x += 1;
 
 	}
 
@@ -61,7 +60,8 @@ public class Loopie implements Runnable{
 	void setup() {
 		getScreenSize();
 		try {
-		//	client = new ServerConnector();
+			client = new ServerConnector();
+			client.start();
 			new MainParser();
 		} catch (IOException e) {
 			e.printStackTrace();

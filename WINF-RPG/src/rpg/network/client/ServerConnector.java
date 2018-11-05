@@ -11,8 +11,8 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class ServerConnector {
-	public ServerConnector() throws IOException {
+public class ServerConnector extends Thread{
+	public void Connector() throws IOException {
 		NetworkFile netData = new NetworkFile();
 		InetAddress address = netData.getAddress();
 		int port = netData.getPort();
@@ -52,6 +52,14 @@ public class ServerConnector {
 			}
 		} catch (ConnectException e) {
 			System.err.println("Unable to connect: Connection refused: connect");
+		}
+	}
+	public void run() {
+		try {
+			Connector();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
