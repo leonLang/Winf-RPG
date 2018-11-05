@@ -5,15 +5,13 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 import rpg.game.Game;
-import rpg.game.GamePanel;
 import rpg.menue.panel.MenuePanel;
+import setup.Loopie;
 
 public class RpgFrame extends JFrame {
 	public static int SCREEN_WIDTH;
 	public static int SCREEN_HEIGHT;
 	
-	public static final int GAME_WIDTH = 1216;
-	public static final int GAME_HEIGHT = 864;
 	
 	public MenuePanel mp;
 	public Game game;
@@ -25,17 +23,16 @@ public class RpgFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public RpgFrame(Dimension dimension) {
+	public RpgFrame(Dimension dimension,Game game) {	//RPGFrame nimmt gleich die beiden instanzen mit so braucht man keine static variablen
 		// Listiner für resizing
 		SCREEN_WIDTH = (int) dimension.getWidth();
 		SCREEN_HEIGHT = (int) dimension.getHeight();
-		
+		this.game = game;
 		mp = new MenuePanel();
-		game = new Game(GAME_WIDTH,GAME_HEIGHT);
 		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(SCREEN_WIDTH/2-GAME_WIDTH/2, SCREEN_HEIGHT/2-GAME_HEIGHT/2,GAME_WIDTH, GAME_HEIGHT);
+		setBounds(SCREEN_WIDTH/2-Loopie.GAME_WIDTH/2, SCREEN_HEIGHT/2-Loopie.GAME_HEIGHT/2,Loopie.GAME_WIDTH, Loopie.GAME_HEIGHT);
 		
 		setContentPane(game.getPanel());
 		/*

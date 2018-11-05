@@ -26,7 +26,9 @@ public class GameGrid extends JPanel {
 	public void draw(Graphics g) {
 		for (int x = 0; x < respx; x++) {
 			for (int y = 0; y < respy; y++) {
-				g.drawRect(translateX(x), translateY(y), (int) cellSize.getWidth(), (int) cellSize.getHeight());
+			
+				g.drawRect(translateX(x), translateY(y), (int) cellSize.getWidth(), (int) cellSize.getHeight());	//provisorisch
+				//g.drawImage(img, x, y, width, height, observer)
 			}
 		}
 	}

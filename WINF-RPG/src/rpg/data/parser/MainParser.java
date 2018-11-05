@@ -6,10 +6,23 @@ import java.nio.file.Paths;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class MainParser {
-	public MainParser() throws IOException {
-		byte[] jsonData = Files.readAllBytes(Paths.get("map1.json"));
-		ObjectMapper objectMapper = new ObjectMapper();
-		MapJson map = objectMapper.readValue(jsonData, MapJson.class);
+public class MainParser extends Thread {
+	
+	MapJson map;
+	
+	public MainParser() {
+	}
+
+	public void load() {
+		
+	}
+	public void start() {
+		try {
+			byte[] jsonData = Files.readAllBytes(Paths.get("map1.json"));
+			ObjectMapper objectMapper = new ObjectMapper();
+			map = objectMapper.readValue(jsonData, MapJson.class);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

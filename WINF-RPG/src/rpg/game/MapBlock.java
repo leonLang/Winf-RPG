@@ -1,5 +1,10 @@
 package rpg.game;
 
-public class MapBlock {
+import java.awt.Image;
 
+public class MapBlock {
+	Image texture;
+	public MapBlock() {
+		
+	}
 }

@@ -2,17 +2,19 @@ package setup;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.Timer;
 
-import rpg.data.parser.MainParser;
 import rpg.frame.RpgFrame;
+import rpg.game.Game;
 import rpg.network.client.ServerConnector;
 
 public class Loopie implements Runnable{
+	public static final int GAME_WIDTH = 1216;
+	public static final int GAME_HEIGHT = 864;
+	
+	
 	public static final int FPS = 60;
 	public static final long maxLoopTime = 1000 / FPS;
 
@@ -20,6 +22,7 @@ public class Loopie implements Runnable{
 	
 	public ServerConnector client;
 	public RpgFrame frame;
+	public Game game;
 	
 	Timer timer;
 
@@ -59,14 +62,12 @@ public class Loopie implements Runnable{
 
 	void setup() {
 		getScreenSize();
-		try {
-			client = new ServerConnector();
-			client.start();
-			new MainParser();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		frame = new RpgFrame(getScreenSize());
+		client = new ServerConnector();
+		client.start();
+		//Instanzen werden schon erstellt
+		game = new Game(GAME_WIDTH,GAME_HEIGHT);
+		
+		frame = new RpgFrame(getScreenSize(),game);
 		frame.setVisible(true);
 	}
 	Dimension getScreenSize() {
