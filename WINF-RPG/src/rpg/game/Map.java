@@ -11,6 +11,9 @@ public class Map {
 	private MainParser parser;
 	private MapJson map;
 	private int[][] mapData;
+	
+	public static int dmx;	//-delta-map-x
+	public static int dmy;	//-delta-map-y
 
 	public Map() {
 		parser = new MainParser();

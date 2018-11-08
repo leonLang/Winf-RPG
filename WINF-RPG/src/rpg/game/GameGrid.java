@@ -16,14 +16,17 @@ public class GameGrid extends JPanel {
 
 	private int respx;
 	private int respy;
+	
 
 	public GameGrid(int WIDTH, int HEIGHT) {
 
-		respx = WIDTH / res;		 
+		respx = WIDTH / res;
 		respy = HEIGHT / res; // Die title bar nimmt platz weg , beträgt ungefährt 1
+		
 
 		System.out.println("GamegridSize:" + respx + "x" + respy);
-		
+		System.out.println(deltaMapX(-64));
+
 		cellSize = new Dimension(res, res);
 
 	}
@@ -31,10 +34,17 @@ public class GameGrid extends JPanel {
 	public void draw(Graphics g) {
 
 		int[][] map = Game.map.getMap();
-
-		for (int x = 0; x < respx; x++) {
-			for (int y = 0; y < respy; y++) {
-				g.drawImage(Game.blocks[map[y][x]].getTexture(), translateX(x)+ Game.dx, translateY(y)+ Game.dy, null);	//aus einem mir nicht bekannten grund ist map[x][y] vertauscht aber so lange es geht :D
+		/*
+		 * Der +2 wer im loop sorgt für eine art "Rahmen" um das ganze geschehen die +1
+		 * in den Translate funktionen sorgt dafür das es auf beiden seiten ist :)
+		 */
+		for (int x = 0; x < respx + 2; x++) {
+			for (int y = 0; y < respy + 2; y++) {
+				g.drawImage(Game.blocks[map[y+1 + deltaMapY(Game.dy)][x+1+deltaMapX(Game.dx)]].getTexture(),
+						translateX(x - 1) + Game.dx, translateY(y - 1) + Game.dy, null); // aus einem mir nicht
+																							// bekannten grund ist
+																							// map[x][y] vertauscht aber
+																							// so lange es geht :D
 			}
 		}
 	}
@@ -50,6 +60,17 @@ public class GameGrid extends JPanel {
 		int dy;
 		dy = (int) cellSize.getHeight() * y;
 		return dy;
+	}
 
+	public int deltaMapX(int dx) {
+		int du;
+		du = (dx - dx % res)/res;
+		return du;
+	}
+
+	public int deltaMapY(int dy) {
+		int du;
+		du = (dy - dy % res)/res;
+		return du;
 	}
 }
