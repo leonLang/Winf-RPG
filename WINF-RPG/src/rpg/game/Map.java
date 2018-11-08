@@ -17,8 +17,8 @@ public class Map {
 		TopLeft = new Dimension(32, 32);
 	}
 
-	public void load() {
-		parser.loadMap();;
+	public void load(int nr) {
+		parser.loadMap(nr);
 		map = parser.map;
 		mapData = ConvertMapData(map.getMap());
 	}

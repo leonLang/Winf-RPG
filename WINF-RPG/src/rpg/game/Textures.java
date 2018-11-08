@@ -10,6 +10,8 @@ public class Textures {
 	}
 	public void load() {
 		//init textreData
+		//texture 0 wird immer geladen --> Kein unsichtbaren blöcke8auch nicht für JONAS)
+		Game.blocks[0].setTexture();
 		String[] preload = Game.map.getJsonMap().getPreload();
 		for(int i = 0;i < preload.length;i++) {
 			int preloadint = Integer.parseInt(preload[i], 16);

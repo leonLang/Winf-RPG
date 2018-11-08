@@ -26,9 +26,9 @@ public class MainParser  {
 			e.printStackTrace();
 		}
 	}
-	public void loadMap() {
+	public void loadMap(int nr) {
 		try {
-			byte[] jsonData = Files.readAllBytes(Paths.get(AppdataPath + "/assats/maps/map1.json"));
+			byte[] jsonData = Files.readAllBytes(Paths.get(AppdataPath + "/assats/maps/map" + nr +".json"));
 			ObjectMapper objectMapper = new ObjectMapper();
 			map = objectMapper.readValue(jsonData, MapJson.class);
 		} catch (IOException e) {

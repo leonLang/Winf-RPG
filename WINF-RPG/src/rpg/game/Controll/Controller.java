@@ -3,6 +3,8 @@ package rpg.game.Controll;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import rpg.game.Game;
+
 public class Controller extends Thread implements KeyListener{
 	public Controller() {
 
@@ -10,7 +12,10 @@ public class Controller extends Thread implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		System.out.println("Button has been pressed");
+		if(e.getKeyCode()== KeyEvent.VK_F12) {
+			Game.map.load(2);
+			System.out.println("Button has been pressed");
+		}
 		
 	}
 
