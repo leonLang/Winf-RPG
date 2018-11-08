@@ -19,8 +19,6 @@ public class Game {
 
 	public Game(int WIDTH, int HEIGHT) {
 		//Delta werte initialisieren
-		dx = 50;
-		dy = 50;
 		// initialisiere GameComponents
 		controll = new Controller();
 		gamepanel = new GamePanel(WIDTH, HEIGHT);
