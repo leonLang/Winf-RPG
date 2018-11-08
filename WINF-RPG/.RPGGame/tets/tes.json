@@ -1,0 +1,16 @@
+{
+  "header": {
+    "uniqueID": "FFFF",
+    "type": "map",
+
+  },
+  "var": {
+  },
+  "content": {
+    "map": 
+    [
+      "AF","AD","00"
+    ]
+    "event"
+  }
+}

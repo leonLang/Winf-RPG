@@ -1,0 +1,39 @@
+!PLL-OBJECT			#Kann OBJECT oder DATA sein 
+{
+:header				#Im header ist es nicht nötig datentypen zu definieren da die im header gannanten daten nur daten sein können die im standart pll format verfügbar sind(siehe funktionen in :content)
+	{
+	-uniqueID FFF;		#Hexadezimal Zahl mit 4 Ziffern (max. 65535)
+	-type map;		#Save typ zb. map,player,subdata
+	-autor 'Peter';		#Name des erstellers
+	-cdate '2018-10-10';	#erstelldatum '<Jahr>-<Monat>-<Tag>'
+	-udate '2018-11-10';	#update Datum
+	-submit 0;		#wie oft schon geupdated
+	}
+:var	
+	{
+	INT X 25;		#Map x länge
+	INT Y 25;		#Map y Länge
+	INT Zoning 3;		#Anzahl der Ein bzw. Ausgänge
+	assats:{		#Die assats funktion ist keine funktion auch wenn sie als solche geschrieben wird, sie dient zur abgrenzung des assats bereich.Hier werden alle für diese pll datei benötigten assats importiert.assats typen sind(TEXT,SOUND,TEXTURE)!DIE TYPEN BEKOMMEN KEINE NAMEN DA SIE SO GESEHEN NUR GEMOVET WERDEN UM DAS PROGRAMM ZU ENTLASTEN!
+		TEXT 3f00;	#Alles assats typen werden mit ihrem zugehörigen hexadezimal code aufgerufen
+		}
+	}
+:content			#hat basis 'funktionen' die als objekt definiert sind diese sind abhängig vom type(siehe header) außerden werdeb hier die für den Spieler sichtbaren dinge aufgelistet
+	{
+	map:{25,6f,a2,1c};	#map ist ein Array welches die map als Hexadezimal zahlen darstellt.map brauch als array NICHT definiert werden(INT[] name [...]) da es im map type als standart funktion verfügbar ist.Außerdem sind die Zahlen trotz Hexa wert INT sie werden im Compiler selbst getrennt.
+	event:{
+		location 20;	#makiert die Stelle im map array auf welchem das event stadtfindet
+		type 'NPC';	#gibt den event typ an
+		text 3f00;	#es ist darauf zu achten nur werte zu nehmen die in :var importiert wurden da ansonsten Nllpointer Exceptions auftreten
+				#das event kann auch attribute beinhalten die der typ nicht verwendet, diese werden vom compiler ignoriert.
+		name 'Bob'	#für npc typen wird so der name festgelegt
+				#..kann so fortgeführt werden
+		};
+	event:{
+		location 30;
+		type 'warp';
+		text 3f00;	#wird ignoriert
+		zoning{FFFA,000F}; #Achtung is bei allen event typ verfügbar deswegen vorsichtig mit dieser grund funktion sein.destination:{mapID,maplocation}
+		};
+	}
+}

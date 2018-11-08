@@ -1,0 +1,18 @@
+
+  [
+    {
+      "nr": "0",
+      "src": "/assats/textures/tree64.png",
+      "coll": false
+    },
+    {
+      "nr": "1",
+      "src": "/assats/textures/tree64.png",
+      "coll": false
+    },
+    {
+      "nr":  "2",
+      "src": "/assats/textures/red64.png",
+      "coll": true
+    }
+  ]
