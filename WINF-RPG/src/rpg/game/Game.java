@@ -1,5 +1,7 @@
 package rpg.game;
 
+import rpg.data.parser.BlockJson;
+import rpg.data.parser.MainParser;
 import rpg.game.Controll.Controller;
 
 public class Game {
@@ -8,24 +10,32 @@ public class Game {
 	
 	private GamePanel gamepanel;
 	
-	private Map map;
+	public static Map map;
+	public static Textures textures;
+	public static BlockJson[] blocks;
 	
-	private MapBlock[][] blocks;
+	
 	
 	public Game(int WIDTH, int HEIGHT) {
 		//initialisiere GameComponents
-		blocks = new MapBlock[32][32];	//Map Size 32x32
 		controll = new Controller();
 		gamepanel = new GamePanel(WIDTH,HEIGHT);
 		
 		gamepanel.addKeyListener(controll);
+		
 		map = new Map();
-		loadMap();
+		map.load();		//1.LoadMap
+		
+		textures = new Textures();	//Konstruktor läd alle texturen :)
+		textures.load();
+			//2.LoadTextures
+		setTextures();		
 	}
 	public GamePanel getPanel() {
 		return gamepanel;
 	}
-	public void loadMap() {
-		map.load();
+	public void setTextures() {
+		
 	}
+
 }

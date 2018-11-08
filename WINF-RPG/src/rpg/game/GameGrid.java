@@ -5,6 +5,8 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
+import rpg.data.parser.MainParser;
+
 public class GameGrid extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -24,11 +26,16 @@ public class GameGrid extends JPanel {
 	}
 
 	public void draw(Graphics g) {
+		
+		int[][] map = Game.map.getMap();
 		for (int x = 0; x < respx; x++) {
 			for (int y = 0; y < respy; y++) {
 			
 				g.drawRect(translateX(x), translateY(y), (int) cellSize.getWidth(), (int) cellSize.getHeight());	//provisorisch
-				//g.drawImage(img, x, y, width, height, observer)
+				//int mx = Game.map.getx(); ---> ist repsx bzw. respy
+				//int my = Game.map.gety();
+				//MainParser.blocks[map[x][y]].getTexture();
+				g.drawImage(Game.blocks[map[x][y]].getTexture(),translateX(x), translateY(y), (int) cellSize.getWidth(), (int) cellSize.getHeight(), null);
 			}
 		}
 	}

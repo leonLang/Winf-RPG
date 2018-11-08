@@ -1,15 +1,22 @@
 package rpg.data.parser;
 
 public class MapJson {
-	String[] map;
+	String[][] map;
+	String[] preload;
 	String name;
 	int x;
 	int y;
 	
-	public String[] getMap() {
+	public String[] getPreload() {
+		return preload;
+	}
+	public void setPreload(String[] preload) {
+		this.preload = preload;
+	}
+	public String[][] getMap() {
 		return map;
 	}
-	public void setMap(String[] map) {
+	public void setMap(String[][] map) {
 		this.map = map;
 	}
 	public String getName() {

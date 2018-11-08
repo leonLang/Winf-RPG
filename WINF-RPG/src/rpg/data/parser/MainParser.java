@@ -6,23 +6,36 @@ import java.nio.file.Paths;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class MainParser extends Thread {
+import rpg.game.Game;
+
+public class MainParser  {
 	
-	MapJson map;
+	public MapJson map;
+	private String AppdataPath;
 	
 	public MainParser() {
+		AppdataPath = System.getProperty("user.home") + "/.RPGGame";
 	}
 
-	public void load() {
-		
-	}
-	public void start() {
+	public void loadBlocks() {
 		try {
-			byte[] jsonData = Files.readAllBytes(Paths.get("map1.json"));
+			byte[] jsonData = Files.readAllBytes(Paths.get(AppdataPath + "/assats/blocks/block.json"));
+			ObjectMapper objectMapper = new ObjectMapper();
+			Game.blocks = objectMapper.readValue(jsonData, BlockJson[].class);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void loadMap() {
+		try {
+			byte[] jsonData = Files.readAllBytes(Paths.get(AppdataPath + "/assats/maps/map1.json"));
 			ObjectMapper objectMapper = new ObjectMapper();
 			map = objectMapper.readValue(jsonData, MapJson.class);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	public MapJson getMap() {
+		return map;
 	}
 }
