@@ -12,18 +12,19 @@ public class GameGrid extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private Dimension cellSize;
+	private final int res = 64;
 
 	private int respx;
 	private int respy;
 
 	public GameGrid(int WIDTH, int HEIGHT) {
 
-		respx = WIDTH / 32;		 
-		respy = HEIGHT / 32 - 1; // Die title bar nimmt platz weg , beträgt ungefährt 1
+		respx = WIDTH / res;		 
+		respy = HEIGHT / res; // Die title bar nimmt platz weg , beträgt ungefährt 1
 
 		System.out.println("GamegridSize:" + respx + "x" + respy);
 		
-		cellSize = new Dimension(32, 32);
+		cellSize = new Dimension(res, res);
 
 	}
 
@@ -33,11 +34,7 @@ public class GameGrid extends JPanel {
 
 		for (int x = 0; x < respx; x++) {
 			for (int y = 0; y < respy; y++) {
-
-				// int mx = Game.map.getx(); ---> ist repsx bzw. respy
-				// int my = Game.map.gety();
-				// MainParser.blocks[map[x][y]].getTexture();
-				g.drawImage(Game.blocks[map[y][x]].getTexture(), translateX(x), translateY(y), null);	//aus einem mir nicht bekannten grund ist map[x][y] vertauscht aber so lange es geht :D
+				g.drawImage(Game.blocks[map[y][x]].getTexture(), translateX(x)+ Game.dx, translateY(y)+ Game.dy, null);	//aus einem mir nicht bekannten grund ist map[x][y] vertauscht aber so lange es geht :D
 			}
 		}
 	}

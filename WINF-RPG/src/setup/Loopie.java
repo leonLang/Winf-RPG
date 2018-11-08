@@ -52,7 +52,7 @@ public class Loopie implements Runnable{
 	}
 
 	void update() {
-
+		game.controll.update();
 	}
 
 	void render() {

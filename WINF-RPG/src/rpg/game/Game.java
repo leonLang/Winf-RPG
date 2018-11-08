@@ -14,7 +14,12 @@ public class Game {
 	public static Textures textures;
 	public static BlockJson[] blocks;
 
+	public static int dx;
+	public static int dy;
+
 	public Game(int WIDTH, int HEIGHT) {
+		dx = 0;
+		dy = 0;
 		// initialisiere GameComponents
 		controll = new Controller();
 		gamepanel = new GamePanel(WIDTH, HEIGHT);
