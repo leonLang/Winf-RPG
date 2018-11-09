@@ -9,6 +9,10 @@ import rpg.menue.panel.MenuePanel;
 import setup.Loopie;
 
 public class RpgFrame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static int SCREEN_WIDTH;
 	public static int SCREEN_HEIGHT;
 	

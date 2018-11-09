@@ -8,7 +8,7 @@ import rpg.game.GameGrid;
 
 public class Controller extends Thread implements KeyListener {
 	private boolean up, down, right, left;
-	private final int c = 10;
+	private final int c = 20;
 
 	public Controller() {
 		up = false;
