@@ -1,5 +1,6 @@
 package rpg.game;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -16,6 +17,8 @@ public class GamePanel extends JPanel {
 
 		background = new GameGrid(WIDTH, HEIGHT);
 		this.add(background);
+		this.setOpaque(true);
+		this.setBackground(Color.black);
 		setLayout(null);
 	}
 

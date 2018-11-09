@@ -10,7 +10,7 @@ public class GameGrid extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private Dimension cellSize;
-	private final int res = 64;
+	public static final int res = 64;
 
 	private int respx;
 	private int respy;

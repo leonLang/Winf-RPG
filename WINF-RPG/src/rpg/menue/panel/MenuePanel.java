@@ -5,9 +5,8 @@ import javax.swing.JButton;
 
 public class MenuePanel extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
+	private static final long serialVersionUID = 1L;
+
 	public MenuePanel() {
 		setLayout(null);
 		

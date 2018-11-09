@@ -2,8 +2,6 @@ package setup;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.io.IOException;
-
 import javax.swing.Timer;
 
 import rpg.frame.RpgFrame;

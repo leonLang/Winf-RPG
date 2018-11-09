@@ -19,7 +19,7 @@ public class Game {
 	public Game(int WIDTH, int HEIGHT) {
 		dx = 0;
 		dy = 0;
-		//Delta werte initialisieren
+		// Delta werte initialisieren
 		// initialisiere GameComponents
 		controll = new Controller();
 		gamepanel = new GamePanel(WIDTH, HEIGHT);
@@ -32,9 +32,20 @@ public class Game {
 		textures = new Textures(); // Konstruktor läd alle texturen :)
 		textures.load(); // 2.LoadTextures
 
+		setdx(20);
+
+		setdy(-4);
 	}
 
 	public GamePanel getPanel() {
 		return gamepanel;
+	}
+
+	public void setdx(int u) {
+		dx = -u * GameGrid.res;
+	}
+
+	public void setdy(int u) {
+		dy = -u * GameGrid.res;
 	}
 }

@@ -74,6 +74,7 @@ public class ServerConnector extends Thread{
 			System.out.println("Connect to: " + address);
 			port = Integer.parseInt(br.readLine());
 			System.out.println("On port: " + port);
+			br.close();
 		}
 		public InetAddress getAddress() throws UnknownHostException {
 			return address;

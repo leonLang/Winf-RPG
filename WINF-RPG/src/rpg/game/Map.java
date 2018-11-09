@@ -1,13 +1,9 @@
 package rpg.game;
 
-import java.awt.Dimension;
-import java.io.IOException;
-
 import rpg.data.parser.MainParser;
 import rpg.data.parser.MapJson;
 
 public class Map {
-	private Dimension TopLeft;
 	private MainParser parser;
 	private MapJson map;
 	private int[][] mapData;
@@ -17,17 +13,12 @@ public class Map {
 
 	public Map() {
 		parser = new MainParser();
-		TopLeft = new Dimension(32, 32);
 	}
 
 	public void load(int nr) {
 		parser.loadMap(nr);
 		map = parser.map;
 		mapData = ConvertMapData(map.getMap());
-	}
-
-	public Dimension getTopLeft() {
-		return TopLeft;
 	}
 
 	public int getx() {
