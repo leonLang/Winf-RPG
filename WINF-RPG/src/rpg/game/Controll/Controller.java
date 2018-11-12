@@ -22,9 +22,6 @@ public class Controller extends Thread implements KeyListener {
 		if (e.getKeyCode() == KeyEvent.VK_F12) {
 			Game.map.load(2);
 		}
-		if (e.getKeyCode() == KeyEvent.VK_F11) {
-			GameGrid.test++;
-		}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
 			up = true;
 		}

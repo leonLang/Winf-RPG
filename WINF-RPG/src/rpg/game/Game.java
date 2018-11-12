@@ -31,10 +31,6 @@ public class Game {
 
 		textures = new Textures(); // Konstruktor läd alle texturen :)
 		textures.load(); // 2.LoadTextures
-
-		setdx(20);
-
-		setdy(-4);
 	}
 
 	public GamePanel getPanel() {

@@ -10,16 +10,13 @@ public class GameGrid extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private Dimension cellSize;
-	public static final int res = 64;
+	public static final int res = 32;
 
 	private int respx;
 	private int respy;
 
-	public static int test;
-
 	public GameGrid(int WIDTH, int HEIGHT) {
 
-		test = 0;
 
 		respx = WIDTH / res;
 		respy = HEIGHT / res; // Die title bar nimmt platz weg , beträgt ungefährt 1

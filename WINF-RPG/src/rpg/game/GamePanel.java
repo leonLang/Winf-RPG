@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
+import rpg.game.player.Player;
+
 public class GamePanel extends JPanel {
 
 	/**
@@ -12,11 +14,14 @@ public class GamePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private GameGrid background;
+	private Player player;
 
 	public GamePanel(int WIDTH, int HEIGHT) {
 
 		background = new GameGrid(WIDTH, HEIGHT);
+		player = new Player(WIDTH,HEIGHT);
 		this.add(background);
+		this.add(player);
 		this.setOpaque(true);
 		this.setBackground(Color.black);
 		setLayout(null);
@@ -26,7 +31,6 @@ public class GamePanel extends JPanel {
 		super.paintComponent(g);
 
 		background.draw(g); // draw background
-
 		// For Controller
 		this.setFocusable(true);
 		this.requestFocusInWindow();
