@@ -2,8 +2,10 @@ package rpg.game;
 
 import java.awt.Color;
 import java.awt.Graphics;
+
 import javax.swing.JPanel;
 
+import rpg.game.debug.DebugWindow;
 import rpg.game.player.Player;
 
 public class GamePanel extends JPanel {
@@ -15,11 +17,15 @@ public class GamePanel extends JPanel {
 
 	private GameGrid background;
 	private Player player;
+	public DebugWindow debug;
 
 	public GamePanel(int WIDTH, int HEIGHT) {
 
 		background = new GameGrid(WIDTH, HEIGHT);
 		player = new Player(WIDTH,HEIGHT);
+		debug = new DebugWindow(WIDTH,HEIGHT);
+		
+		this.add(debug);
 		this.add(background);
 		this.add(player);
 		this.setOpaque(true);

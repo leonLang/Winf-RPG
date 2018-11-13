@@ -6,7 +6,9 @@ import javax.swing.Timer;
 
 import rpg.frame.RpgFrame;
 import rpg.game.Game;
+import rpg.game.GamePanel;
 import rpg.network.client.ServerConnector;
+import sound.Sound;
 
 public class Loopie implements Runnable{
 	public static final int GAME_WIDTH = 1216;
@@ -51,6 +53,7 @@ public class Loopie implements Runnable{
 
 	void update() {
 		game.controll.update();
+		game.getPanel().debug.DebugUpdate();
 	}
 
 	void render() {

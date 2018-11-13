@@ -25,7 +25,7 @@ public class Player extends JLabel {
 		this.setSize(Width, Height);
 		icon = new ImageIcon("C:\\Users\\tromp\\.RPGGame\\assats\\textures\\red.png");
 		this.setIcon(icon);
-		this.setLocation(posx - GameGrid.res / 2, posy - GameGrid.res / 2);
+		this.setLocation(posx, posy);
 	}
 
 	public void draw() {

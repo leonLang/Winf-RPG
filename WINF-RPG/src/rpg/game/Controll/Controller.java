@@ -5,10 +5,11 @@ import java.awt.event.KeyListener;
 
 import rpg.game.Game;
 import rpg.game.GameGrid;
+import rpg.game.debug.DebugWindow;
 
 public class Controller extends Thread implements KeyListener {
 	private boolean up, down, right, left;
-	private final int c = 20;
+	private final int c = 1;
 
 	public Controller() {
 		up = false;
@@ -19,6 +20,9 @@ public class Controller extends Thread implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		if (e.getKeyCode() == KeyEvent.VK_F3) {
+			DebugWindow.visibility();
+		}
 		if (e.getKeyCode() == KeyEvent.VK_F12) {
 			Game.map.load(2);
 		}
